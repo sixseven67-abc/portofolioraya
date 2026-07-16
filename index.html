@@ -1,0 +1,425 @@
+<!-- IMG-20260716-WA0007.jpg -->
+# Portfolio Development Roadmap
+
+## Phase 1: Foundation (Current)
+- **Personal Brand & Design System**: Establishing the visual identity based on the "Stacey Wang" aesthetic.
+- **Landing Page**: Core sections including Home, About Me (Tentang Saya), and Education History (Riwayat Pendidikan).
+- **Skills Section**: Visual representation of current HTML & CSS learning progress.
+- **Learning Results (Carousel)**: A structured section to showcase HTML/CSS exercises with screenshots and descriptions.
+
+## Phase 2: Content Expansion
+- **Project Deep Dives**: Detailed pages for specific learning milestones.
+- **Interactive Elements**: Adding subtle CSS transitions and hover effects to enhance the 'aesthetic' feel.
+- **Expanded Education**: Adding certifications and online courses.
+
+## Phase 3: Technical Evolution (JavaScript)
+- **Dynamic Carousel**: Implementing JavaScript for a fully functional, interactive slide system.
+- **Filterable Skills**: Categorizing skills (Frontend, Design, Tools).
+- **Contact Form**: A functional way for visitors to reach out.
+
+## Phase 4: Advanced Features
+- **Dark Mode**: A secondary theme that maintains the scrapbook aesthetic.
+- **Blog/Journal**: A place to document the learning journey in detail.
+- **Advanced Animations**: Using GSAP or Framer Motion for high-end transitions.
+
+<!-- Project Roadmap -->
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AestheticFolio - Portofolio Digital</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Hanken+Grotesk:wght@400;500;700&amp;family=Space+Grotesk:wght@500&amp;family=Gochi+Hand&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fdf9f3",
+                        "surface-bright": "#fdf9f3",
+                        "surface-tint": "#954266",
+                        "on-primary-fixed-variant": "#782b4e",
+                        "secondary": "#5f5e5e",
+                        "primary-fixed": "#ffd9e4",
+                        "on-primary-container": "#6f2347",
+                        "inverse-surface": "#31302d",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "primary-container": "#f08db4",
+                        "secondary-container": "#e4e2e1",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#635e53",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary-fixed-dim": "#cec5b9",
+                        "error": "#ba1a1a",
+                        "on-background": "#1c1c18",
+                        "surface-container-highest": "#e6e2dc",
+                        "on-tertiary-fixed-variant": "#4b463d",
+                        "on-primary-fixed": "#3e0021",
+                        "on-surface": "#1c1c18",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-container-high": "#ebe8e2",
+                        "primary": "#954266",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#b2aa9e",
+                        "outline-variant": "#d8c1c7",
+                        "outline": "#857278",
+                        "inverse-primary": "#ffb0cd",
+                        "surface-container-low": "#f7f3ed",
+                        "primary-fixed-dim": "#ffb0cd",
+                        "background": "#fdf9f3",
+                        "on-secondary-container": "#656464",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#534248",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#443f35",
+                        "on-tertiary-fixed": "#1f1b13",
+                        "surface-container": "#f1ede7",
+                        "tertiary-fixed": "#eae1d4",
+                        "inverse-on-surface": "#f4f0ea",
+                        "surface-variant": "#e6e2dc",
+                        "surface-dim": "#ddd9d4",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-page": "40px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "label-sm": ["Space Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Bricolage Grotesque"],
+                        "display-xl": ["Bricolage Grotesque"],
+                        "handwritten": ["Gochi Hand", "cursive"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["80px", {"lineHeight": "80px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                        "display-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .washi-tape {
+            position: absolute;
+            height: 30px;
+            width: 100px;
+            background-color: rgba(240, 141, 180, 0.6);
+            transform: rotate(-5deg);
+            z-index: 10;
+            mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L100,0 L95,15 L100,30 L0,30 L5,15 Z" fill="black"/></svg>');
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L100,0 L95,15 L100,30 L0,30 L5,15 Z" fill="black"/></svg>');
+        }
+        .paper-edge {
+            clip-path: polygon(0% 0%, 100% 0%, 98% 5%, 100% 10%, 97% 15%, 100% 20%, 98% 25%, 100% 30%, 97% 35%, 100% 40%, 98% 45%, 100% 50%, 97% 55%, 100% 60%, 98% 65%, 100% 70%, 97% 75%, 100% 80%, 98% 85%, 100% 90%, 97% 95%, 100% 100%, 0% 100%);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 200px;
+            gap: 20px;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center px-margin-page py-4 max-w-7xl mx-auto">
+<span class="font-display-lg-mobile text-headline-lg-mobile text-primary tracking-tighter">AestheticFolio</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary-container pb-1 transition-all" href="#home">Beranda</a>
+<a class="text-secondary hover:text-primary hover:scale-105 transition-all" href="#about">Tentang Saya</a>
+<a class="text-secondary hover:text-primary hover:scale-105 transition-all" href="#education">Pendidikan</a>
+<a class="text-secondary hover:text-primary hover:scale-105 transition-all" href="#learning">Hasil Belajar</a>
+<a class="text-secondary hover:text-primary hover:scale-105 transition-all" href="#skills">Skills</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-sm hover:scale-105 active:rotate-1 transition-all">Kontak</button>
+</div>
+<!-- Mobile Menu Toggle (Simplified) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-24 space-y-section-gap">
+<!-- Section 1: Beranda (Hero) -->
+<section class="relative min-h-[85vh] flex flex-col items-center justify-center px-margin-page overflow-hidden" id="home">
+<div class="absolute -top-10 -left-10 w-64 h-64 bg-primary-fixed rounded-full blur-[80px] opacity-40"></div>
+<div class="absolute bottom-0 right-0 w-96 h-96 bg-tertiary-fixed rounded-full blur-[100px] opacity-30"></div>
+<div class="relative z-10 text-center space-y-6">
+<p class="font-handwritten text-3xl text-primary -rotate-3 mb-4">Hi. Since you're new here.</p>
+<div class="relative inline-block">
+<h1 class="font-display-xl text-display-xl text-primary leading-none uppercase mix-blend-multiply md:text-[140px]">
+                        STACEY<br/>WANG
+                    </h1>
+<!-- Main Hero Image Placement -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 md:w-96 z-20 group">
+<div class="washi-tape -top-4 left-1/4"></div>
+<img class="w-full h-auto rounded-lg shadow-xl border-8 border-white transform hover:rotate-2 transition-transform duration-500 cursor-pointer" data-alt="A stylish portrait of a young woman with dark hair and glasses, posing confidently in a minimalist urban setting. She wears a clean white top and a sophisticated pendant. The image has a warm, grainy film aesthetic, mimicking a high-end scrapbook photograph. Soft, natural lighting highlights her expressive features and artistic persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwv75loXJGrWoeb4nnNopebd39582ZXzValsYMhms9zzTdDbRaXrhOpoeQ1PEMWqa1elJnqGaQHRZFdmJVaqmqG2gpW5k0hEVTNmjfx6Fg8MLMZwJgFTYsc8_GKnSMoCglgiQI7Sxt1hK_ZAVmT-n88aJVuqrN4NaO7_tRjfpqREehdXj7Gq46bWcfi4-X_599pHqxpowe8gO0VA_aHJKPiIvAU40zrRzV0SnTQB3_9O0EzUyb8H_z"/>
+<div class="washi-tape bottom-4 right-1/4 rotate-12 bg-tertiary/40"></div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between mt-12 gap-6 w-full max-w-4xl">
+<p class="font-label-sm uppercase tracking-widest text-secondary">Graphic Designer / Video Editor</p>
+<p class="font-handwritten text-2xl text-tertiary max-w-xs text-right">let me be ya tour guide</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Tentang Saya -->
+<section class="px-margin-page max-w-7xl mx-auto grid md:grid-cols-2 gap-gutter items-center" id="about">
+<div class="relative order-2 md:order-1">
+<div class="bg-surface-container-high p-8 paper-edge shadow-sm transform -rotate-2">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Tentang Saya</h2>
+<div class="space-y-4 font-body-lg text-on-surface-variant leading-relaxed">
+<p class="font-handwritten text-2xl mb-4 text-tertiary">"Hidup adalah tentang belajar hal-hal cantik."</p>
+<p>Halo! Saya Stacey. Saat ini saya sedang dalam perjalanan seru mengeksplorasi dunia digital kreatif. Perjalanan belajar saya dimulai dari rasa penasaran bagaimana visual bisa menceritakan sebuah perasaan.</p>
+<p>Sekarang, saya sedang mendalami <b>HTML &amp; CSS</b> untuk membangun 'rumah' digital saya sendiri. Bagi saya, coding bukan sekadar baris teks, tapi kanvas digital yang menunggu untuk dihias.</p>
+</div>
+<div class="mt-8 flex gap-4">
+<div class="bg-primary-container/20 px-4 py-2 rounded-full border border-primary/20 text-primary font-label-sm">#CreativeJourney</div>
+<div class="bg-tertiary-container/20 px-4 py-2 rounded-full border border-tertiary/20 text-tertiary font-label-sm">#FutureWebDev</div>
+</div>
+</div>
+<!-- Decoration -->
+<div class="absolute -bottom-8 -right-8 w-24 h-24 rotate-12 opacity-50">
+<span class="material-symbols-outlined text-primary text-6xl" data-icon="brush">brush</span>
+</div>
+</div>
+<div class="order-1 md:order-2 grid grid-cols-2 gap-4">
+<img class="w-full h-48 object-cover rounded-xl shadow-md -rotate-3 hover:rotate-0 transition-transform" data-alt="A collection of close-up polaroid-style photos showing a creative workspace. Detailed view of a vintage film camera, a sketchbook with messy ink drawings, and a warm cup of coffee on a wooden desk. The lighting is cozy and golden-hour focused, creating a sense of authentic creativity and quiet focus. The color palette is earthy with soft pink accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVYWcX7WVql62LOZxuL4qjx-DjNUJpROcYOkuXXPUHps5hIE5V1NQGuu0_vTqk8Rw76B09ssbF-LKXZayFhXskKfqz0TX3t4FAa0BouIpNDuhvQUyPDKZSZ1UgVJS90u32P6TdzyYLh5qRahsH5NIGzi7tk-nabQGNgPbrCqhItA5gVsgZQ2zM-PBDqSqZVCjbSE8lBdC-NvkHAwxYkEEJe9nSL_GLA9ssXLHua7B203T9SV0hTITt"/>
+<img class="w-full h-64 object-cover rounded-xl shadow-md rotate-2 hover:rotate-0 transition-transform" data-alt="An aesthetic close-up of a computer screen displaying elegant lines of code in a pink-themed code editor. The surroundings are softly blurred, showing a small succulent plant and a pair of stylish glasses. The scene is clean, modern, and feminine, reflecting a blend of technology and artistic flair." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEgJICAU97ZR9xMhZauQzbmUpvkr6d3-GnkybsY4kdnKRyJZvOk90iYh9OXG_TQ9W12ifmyBG8OogiUMQABFZyzc7pSLRbr7iJApj6ZtuPb8hIVinQbJEdoqXfpsAKNKNAoIXV7T7Crqur0HF8hi45s8TWLY-C7Oqoof6O-4GT3BfB6nLO6ER3qHPbYmH2xgY_nXoGkNxLQdOs7AHFW5QsOY8hiXObjKq7SE3Ph0nQRx80lPlSivJR"/>
+</div>
+</section>
+<!-- Section 3: Riwayat Pendidikan -->
+<section class="bg-surface-container-low py-section-gap" id="education">
+<div class="px-margin-page max-w-5xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-headline-lg text-secondary inline-block relative">
+                        Riwayat Pendidikan
+                        <div class="absolute -right-12 -top-4">
+<span class="material-symbols-outlined text-primary text-4xl animate-bounce" data-icon="school">school</span>
+</div>
+</h2>
+</div>
+<div class="relative space-y-12">
+<!-- Connector Line -->
+<div class="absolute left-1/2 top-0 bottom-0 w-1 bg-primary-container/30 hidden md:block -translate-x-1/2 border-dashed border-2"></div>
+<!-- Timeline Item 1 -->
+<div class="flex flex-col md:flex-row items-center gap-8 relative group">
+<div class="md:w-1/2 md:text-right">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant hover:shadow-lg transition-shadow">
+<span class="font-label-sm text-primary mb-2 block">2009 - 2015</span>
+<h3 class="font-headline-lg-mobile text-on-surface">SD Santa Maria Assumpta Klaten</h3>
+<p class="text-on-surface-variant mt-2 italic font-handwritten text-xl">"Awal mula kecintaan pada seni lukis."</p>
+</div>
+</div>
+<div class="w-12 h-12 bg-primary rounded-full z-10 flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform">
+<span class="material-symbols-outlined text-white text-2xl" data-icon="location_on" data-weight="fill">location_on</span>
+</div>
+<div class="md:w-1/2"></div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="flex flex-col md:flex-row items-center gap-8 relative group">
+<div class="md:w-1/2"></div>
+<div class="w-12 h-12 bg-tertiary rounded-full z-10 flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform">
+<span class="material-symbols-outlined text-white text-2xl" data-icon="push_pin" data-weight="fill">push_pin</span>
+</div>
+<div class="md:w-1/2">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant hover:shadow-lg transition-shadow transform rotate-1">
+<span class="font-label-sm text-tertiary mb-2 block">2015 - 2018</span>
+<h3 class="font-headline-lg-mobile text-on-surface">SMP Pangudi Luhur 1 Klaten</h3>
+<p class="text-on-surface-variant mt-2 italic font-handwritten text-xl">"Mengeksplorasi organisasi &amp; desain poster."</p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="flex flex-col md:flex-row items-center gap-8 relative group">
+<div class="md:w-1/2 md:text-right">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant hover:shadow-lg transition-shadow transform -rotate-1">
+<span class="font-label-sm text-primary mb-2 block">2018 - 2021</span>
+<h3 class="font-headline-lg-mobile text-on-surface">SMA Stella Duce 1 Yogyakarta</h3>
+<p class="text-on-surface-variant mt-2 italic font-handwritten text-xl">"Menemukan passion di video editing."</p>
+</div>
+</div>
+<div class="w-12 h-12 bg-primary-container rounded-full z-10 flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform">
+<span class="material-symbols-outlined text-white text-2xl" data-icon="star" data-weight="fill">star</span>
+</div>
+<div class="md:w-1/2"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Hasil Pembelajaran (Carousel) -->
+<section class="px-margin-page max-w-7xl mx-auto overflow-hidden" id="learning">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12">
+<div class="space-y-2">
+<h2 class="font-display-lg text-headline-lg text-primary">Hasil Belajar</h2>
+<p class="text-secondary-fixed-dim font-body-lg">Log perkembangan coding saya setiap minggunya.</p>
+</div>
+<div class="flex gap-4 mt-6 md:mt-0">
+<button class="w-12 h-12 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all" onclick="scrollCarousel(-1)">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary/90 transition-all" onclick="scrollCarousel(1)">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex gap-gutter overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-8" id="learning-carousel">
+<!-- Learning Card 1 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-center bg-surface-container-highest p-6 rounded-3xl shadow-sm border-t-8 border-primary relative">
+<div class="washi-tape -top-3 -right-2 bg-yellow-200/50"></div>
+<img class="w-full h-48 object-cover rounded-xl mb-4 border-2 border-white" data-alt="A clean screenshot of a beautifully designed web landing page featuring soft pastel colors, bold typography, and artistic image placement. The layout is modern and responsive, showcasing a mastery of flexbox and CSS grid. High contrast and accessibility are clearly prioritized in the design aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvk8wd90GRB9cF-3x7Q52hvDPAY8p2MOoXYwZjkB3_ElQzyoztnQWcIq2whzkC9kj0P3YpTwJxxl49eCDIRzuU8arz_8TZqjz3tkm5n_qKPFIsAQmmMb9BxjE1uL6etEyqiz8AbGgKqMYPW5LzemGgGnstYK27e_hxu5ovL6w_JyKP3LW4jwWwGXBwOWStZqMg7PcykjnkOp7E5UWBDfgoe-XNuu1p_G9fHHrLVj-UoF_PglM887zP"/>
+<span class="text-label-sm font-label-sm text-tertiary">12 Oktober 2023</span>
+<h3 class="font-headline-lg-mobile text-primary mt-1 mb-3">Struktur Dasar HTML</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3">Belajar anatomi HTML, penggunaan tag semantic, dan cara menyusun konten yang baik agar terbaca oleh mesin pencari.</p>
+</div>
+<!-- Learning Card 2 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-center bg-surface-container-highest p-6 rounded-3xl shadow-sm border-t-8 border-tertiary relative transform rotate-1">
+<img class="w-full h-48 object-cover rounded-xl mb-4 border-2 border-white" data-alt="A close-up view of a code editor showing sophisticated CSS styling, including complex animation keyframes and variable declarations. The screen is clear and sharp, with a focused atmosphere. Beside the laptop, there are colorful design markers and a ruler, indicating a hands-on approach to digital creation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhKqa2SEBJdyfZxIHsObGL2OdxZWBJ0wxE19tXvNvpnMrOa2Qr9xBZ7gQDyhFYKotUXCokpG-w0dd9EcqtR6rhLfJ0a2jG3P6F-ms3LTf_VxswMuwacNoOJS5SX6KH0agTWNre4cxbuaM5HcfKJhyG4SGxf47zsnTDEbB46KRRcvm0KZANeyEixKzu7vM0XcnYliRrlSXhDuF6l50ikbUpWeNuUvypm9yOC_clgP8rpaCaw6i4lIoN"/>
+<span class="text-label-sm font-label-sm text-tertiary">19 Oktober 2023</span>
+<h3 class="font-headline-lg-mobile text-primary mt-1 mb-3">Styling dengan CSS</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3">Menghias halaman dengan warna, tipografi, dan mengatur layout menggunakan Box Model. Menemukan keajaiban Flexbox!</p>
+</div>
+<!-- Learning Card 3 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-center bg-surface-container-highest p-6 rounded-3xl shadow-sm border-t-8 border-primary-container relative transform -rotate-1">
+<div class="washi-tape -top-3 -left-2 bg-primary/40"></div>
+<img class="w-full h-48 object-cover rounded-xl mb-4 border-2 border-white" data-alt="A detailed digital collage representing responsive web design across various devices like a laptop, tablet, and smartphone. The visuals are consistent and aesthetic, showing how a single layout gracefully adapts to different screen sizes. The style is minimalist and clean, reflecting professional development skills." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlRXVPS0KrKYAeAc5aAoQrDnmTSAXnUwRadCSzfrRNwf6zW0h1Kluv3qMvtA65VzJIrd413WZWalyw7FzJ_nWdDhrPRcqXQOb0wJCy5LZeJ5XP6AMhDL_RgcqseVWk0pSjIMkIyv4I5s7FqLYgUH-KzRWzt-z_n4YVj5m-FBF7hbjXiFTOgBFr9smU2jJ2HuGBSt0pHAohh20OKNEdT8104aRQnVqcavvr3TzSnu1CIoWqrPSz59sc"/>
+<span class="text-label-sm font-label-sm text-tertiary">26 Oktober 2023</span>
+<h3 class="font-headline-lg-mobile text-primary mt-1 mb-3">Responsive Design</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3">Membuat desain yang tetap cantik di layar HP maupun laptop menggunakan Media Queries dan mobile-first approach.</p>
+</div>
+<!-- Learning Card 4 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-center bg-surface-container-highest p-6 rounded-3xl shadow-sm border-t-8 border-secondary relative">
+<img class="w-full h-48 object-cover rounded-xl mb-4 border-2 border-white" data-alt="An abstract visualization of web interactivity, featuring glowing nodes connected by pulsating lines against a dark, minimalist background. The aesthetic is futuristic yet artistic, suggesting the power of modern web technologies to create engaging user experiences. Soft purple and blue lighting creates depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWRxTP7t8Gsyb9JcPhWh6HUpzns4rNiE1iX4iM4ru5Z1gYcIyYtYE5B_PGl44qebDsEKTtrTnyXfNRP_Q80Mwe52ZIqwirVKr5I76YKvvsKGUY2eJXQGuXOHOLA6QC6MIdpx1WpiahMahqGfiMIQfj1EYJjElBNHPbIDAQAOhcK5EcjYefqRNb6RMTwxAGjI7SbZkD3thQQ_cM8crm2GNybDx-48FIWHoTgHMhg_2GQF--DNLH0af5"/>
+<span class="text-label-sm font-label-sm text-tertiary">02 November 2023</span>
+<h3 class="font-headline-lg-mobile text-primary mt-1 mb-3">Animasi &amp; Transisi</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-3">Mempelajari cara memberi 'nyawa' pada elemen web dengan transisi halus dan animasi CSS yang memanjakan mata.</p>
+</div>
+</div>
+</section>
+<!-- Section 5: Skills (Bento Grid) -->
+<section class="px-margin-page max-w-7xl mx-auto py-section-gap" id="skills">
+<h2 class="font-display-lg text-headline-lg text-center mb-16">My Creative Toolkit</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+<!-- Skill 1: HTML -->
+<div class="md:col-span-2 md:row-span-1 bg-primary-container/20 border-2 border-primary-container rounded-[40px] p-8 flex flex-col justify-between group hover:bg-primary-container transition-all duration-500 overflow-hidden relative">
+<div class="z-10">
+<h3 class="font-display-lg text-headline-lg text-primary group-hover:text-white">HTML</h3>
+<p class="text-primary/70 group-hover:text-white/80 font-body-lg">Structuring the digital world with semantic tags and logical architecture.</p>
+</div>
+<div class="absolute -right-10 -bottom-10 opacity-20 group-hover:opacity-40 transition-opacity">
+<span class="material-symbols-outlined text-[200px]" data-icon="html">html</span>
+</div>
+</div>
+<!-- Skill 2: CSS -->
+<div class="md:col-span-1 md:row-span-2 bg-tertiary-fixed border-2 border-tertiary-fixed-dim rounded-[40px] p-8 flex flex-col items-center justify-center text-center group hover:-rotate-2 transition-transform">
+<span class="material-symbols-outlined text-7xl text-tertiary mb-6" data-icon="palette" data-weight="fill">palette</span>
+<h3 class="font-display-lg text-headline-lg-mobile text-tertiary">CSS</h3>
+<p class="text-tertiary/80 mt-4">Painting pixels with layouts, colors, and smooth motion.</p>
+</div>
+<!-- Image Accent -->
+<div class="md:col-span-1 md:row-span-1 rounded-[40px] overflow-hidden shadow-lg transform rotate-3">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a designer's hands working on a digital tablet. The screen shows vibrant color palettes and organic UI shapes being manipulated. The lighting is soft and focused on the interaction, emphasizing the tactile nature of digital design. The surrounding area is clean and aesthetically pleasing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASc-RF4szA1S2stOa8B0CNHBaXvjUNsg-TevMv9WUIc8pOgM8uc-gBadWJ2OyUSHcTzx3NnlKPQagfnVWPTUK0sk8bktJ5y1-q5QxBLk_z77oBCZGi2jw7romIc_mkvev9JA3Zam9pvT2uEArQj99jd7xW9BysAbp3LjsbxxBVv5MrS29cRJHFjk-zMikMA9bMtD2TLbJUAU_qspnbDuFn4op4QB6KyNK08aHY4XyoCGj1MHy_fao6"/>
+</div>
+<!-- Skill 3: Design -->
+<div class="md:col-span-2 md:row-span-1 bg-surface-container-highest border-2 border-outline-variant rounded-[40px] p-8 flex items-center gap-8 group hover:scale-[1.02] transition-all">
+<div class="flex-1">
+<h3 class="font-display-lg text-headline-lg-mobile text-on-surface">Design</h3>
+<p class="text-on-surface-variant font-body-md mt-2">Crafting aesthetic experiences through layout, typography, and mood-boarding.</p>
+</div>
+<div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="auto_awesome" data-weight="fill">auto_awesome</span>
+</div>
+</div>
+<!-- Small Accents -->
+<div class="md:col-span-1 md:row-span-1 bg-primary text-on-primary rounded-[40px] p-6 flex flex-col justify-center items-center text-center">
+<span class="font-handwritten text-4xl mb-2">100%</span>
+<p class="font-label-sm uppercase tracking-tighter">Passion Guided</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-highest mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-gap gap-gutter w-full max-w-7xl mx-auto">
+<div class="text-center md:text-left">
+<span class="font-headline-lg-mobile text-primary block mb-2">AestheticFolio</span>
+<p class="font-label-sm text-on-surface">© 2024 Scrapbook Portfolio. Dibuat dengan cinta &amp; kopi.</p>
+</div>
+<div class="flex gap-8 items-center mt-8 md:mt-0">
+<a class="text-on-secondary-container font-label-sm hover:underline decoration-primary-container underline-offset-4 transition-opacity hover:opacity-80" href="#">Instagram</a>
+<a class="text-on-secondary-container font-label-sm hover:underline decoration-primary-container underline-offset-4 transition-opacity hover:opacity-80" href="#">LinkedIn</a>
+<a class="text-on-secondary-container font-label-sm hover:underline decoration-primary-container underline-offset-4 transition-opacity hover:opacity-80" href="#">Github</a>
+</div>
+</div>
+</footer>
+<!-- FAB (Suppressed based on rules for generic browse screens, but added for CTA on Home/Landing) -->
+<button class="fixed bottom-8 right-8 bg-primary text-on-primary w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined">send</span>
+</button>
+<script>
+        function scrollCarousel(direction) {
+            const container = document.getElementById('learning-carousel');
+            const scrollAmount = 400;
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Simple Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        // Add some "handwritten" floating particles or doodles via JS for atmosphere
+        const createDoodle = () => {
+            const doodle = document.createElement('div');
+            doodle.className = 'absolute pointer-events-none opacity-10 text-primary';
+            doodle.style.left = Math.random() * 100 + 'vw';
+            doodle.style.top = Math.random() * 300 + 'vh';
+            doodle.style.transform = `rotate(${Math.random() * 360}deg)`;
+            doodle.innerHTML = `<span class="material-symbols-outlined text-4xl">favorite</span>`;
+            document.body.appendChild(doodle);
+        };
+        for(let i=0; i<15; i++) createDoodle();
+    </script>
+</body></html>
